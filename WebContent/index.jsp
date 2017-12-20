@@ -7,6 +7,14 @@
 <title>Index Page</title>
 </head>
 <body>
-	Hello World
+	<!-- Ref. https://www.tutorialspoint.com/servlets/servlets-form-data.htm -->
+	<form action="DictionaryServlet" method="post">
+		<p>Enter a word</p>
+		<input type="text" name="wordInput"/>
+		<input type="submit" value="submit"/>
+	</form>
+	<form action="DictionaryServlet" method="get">
+		<p>Definition</p>
+	</form>
 </body>
 </html>
