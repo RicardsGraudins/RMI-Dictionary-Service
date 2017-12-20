@@ -19,11 +19,18 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 		super();
 	}
 
+	//Search for a word in the Dictionary Hashmap
 	@Override
 	public String lookup(String s) throws RemoteException {
-		word = Dictionary.get(s);
-		return word;
-	}
+		if (Dictionary.containsKey(s)) {
+			word = Dictionary.get(s);
+			return word;
+		}
+		else {
+			System.out.println(s + " is not in the dictionary.");
+			return null;
+		}
+	}//lookup
 	
 	/*
 	public Map<String, String> loadDictionary(Map<String,String> DictionaryP) throws RemoteException, IOException {
@@ -47,21 +54,32 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 	}//loadDictionary
 	*/
 	
-	public void loadDictionary() throws RemoteException, IOException {
+	//Load data from DICTIONARY_FILE into Dictionary Hashmap & split
+	//the word from the definition on the first coma of every line
+	public void loadDictionary() throws RemoteException {
 	    String line;
-	    BufferedReader reader = new BufferedReader(new FileReader(DICTIONARY_FILE));
-	    while ((line = reader.readLine()) != null)
-	    {
-	        String[] parts = line.split(",", 2);
-	        if (parts.length >= 2)
-	        {
-	            String key = parts[0];
-	            String value = parts[1];
-	            Dictionary.put(key, value);
-	        } else {
-	            System.out.println("Ignoring line: " + line);
-	        }
-	    }//while
-	    reader.close();
+	    BufferedReader reader;
+	    
+		try {
+			reader = new BufferedReader(new FileReader(DICTIONARY_FILE));
+			
+		    while ((line = reader.readLine()) != null)
+		    {
+		        String[] parts = line.split(",", 2);
+		        if (parts.length >= 2)
+		        {
+		            String key = parts[0];
+		            String value = parts[1];
+		            Dictionary.put(key, value);
+		        } else {
+		            System.out.println("Ignoring line: " + line);
+		        }
+		    }//while
+		    
+		    reader.close();
+		}//Try 
+		catch(IOException e) {
+			e.printStackTrace();
+		}//Catch
 	}//loadDictionary
 }//DictionaryService
