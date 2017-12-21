@@ -3,7 +3,7 @@ package ie.gmit.sw;
 import java.io.IOException;
 import java.rmi.Naming;
 import java.util.PriorityQueue;
-
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -66,11 +66,15 @@ public class DictionaryServlet extends HttpServlet {
 			e.printStackTrace();
 		}//Catch
 		
+		//Navigate to Reponse.jsp with word & definition
+		request.setAttribute("word", inQueue.peek().getmessage());
+		request.setAttribute("definition", outQueue.peek().getmessage());
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/Response.jsp");
+		dispatcher.forward(request, response);
+		
 		//Delete the first Request object from both queues		
 		inQueue.poll();
 		outQueue.poll();
-		
-		response.getWriter().append("Served at: " + request.getParameter("wordInput")).append(request.getContextPath());	
 	}//doGet
 
 	/**

@@ -1,16 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--  DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd" -->
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Dictionary Service</title>
 </head>
 <body>
-	<form action="DictionaryServlet" method="post">
-		<p>Enter a word:</p>
-		<input type="text" name="wordInput"/>
-		<input type="submit" value="submit"/>
-	</form>
+	<h1>Dictionary Service</h1>
+	<p id="msg"></p>
+	<div id="myform">
+		<form action="DictionaryServlet" method="post">
+			<input type="text" placeholder="Enter query here" name="wordInput"/>
+			<input type="submit" value="submit" id="submitbtn"/>
+		</form>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#submitbtn').on('click', function(){
+				$("#myform").hide();
+				$("#msg").text("Waiting for response...");
+			});
+		});
+	</script>
 </body>
 </html>
