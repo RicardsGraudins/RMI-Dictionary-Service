@@ -26,20 +26,16 @@ public class DictionaryServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: " + request.getParameter("wordInput")).append(request.getContextPath());
-	}
+		String word = request.getParameter("wordInput");
+		System.out.println(word);
+		response.getWriter().append("Served at: " + request.getParameter("wordInput")).append(request.getContextPath());	
+	}//doGet
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		String word = request.getParameter("wordInput");
-		System.out.println(word);
-		System.out.println(word);
-		System.out.println(word);
 		doGet(request, response);
 	}
 
-}//DictionaryServlet
+}

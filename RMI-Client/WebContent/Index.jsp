@@ -4,17 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Index Page</title>
+<title>Dictionary Service</title>
 </head>
 <body>
-	<!-- Ref. https://www.tutorialspoint.com/servlets/servlets-form-data.htm -->
 	<form action="DictionaryServlet" method="post">
-		<p>Enter a word</p>
+		<p>Enter a word:</p>
 		<input type="text" name="wordInput"/>
 		<input type="submit" value="submit"/>
-	</form>
-	<form action="DictionaryServlet" method="get">
-		<p>Definition</p>
 	</form>
 </body>
 </html>

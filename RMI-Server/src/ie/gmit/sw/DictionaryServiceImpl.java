@@ -27,8 +27,7 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 			return word;
 		}
 		else {
-			System.out.println(s + " is not in the dictionary.");
-			return null;
+			return s + " is not in the dictionary.";
 		}
 	}//lookup
 	
