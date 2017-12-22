@@ -28,6 +28,11 @@
 	<form action="http://localhost:8080/RMI-Client/DeleteWord.jsp">
     	<input type="submit" value="Delete a word" />
 	</form>
+	<br/>
+	<!-- Link to modify a word -->
+	<form action="http://localhost:8080/RMI-Client/ModifyWord.jsp">
+    	<input type="submit" value="Modify a word" />
+	</form>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script type="text/javascript">
 		//When the user clicks on the submit button hide the form

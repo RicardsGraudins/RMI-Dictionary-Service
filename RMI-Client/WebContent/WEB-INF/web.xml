@@ -6,5 +6,6 @@
     <welcome-file>Response.jsp</welcome-file>
     <welcome-file>AddWord.jsp</welcome-file>
     <welcome-file>DeleteWord.jsp</welcome-file>
+    <welcome-file>ModifyWord.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

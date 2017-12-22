@@ -122,4 +122,12 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 			e.printStackTrace();
 		}//Catch
 	}//deleteWord
+	
+	//Modify a word's definition in DICTIONARY_FILE
+	public void modifyWord(String word, String definition, String newDefinition) throws RemoteException{
+		//Delete the word & its definition from DICTIONARY_FILE
+		deleteWord(word, definition);
+		//Add the word & its new definition to DICTIONARY_FILE
+		addWord(word, newDefinition);
+	}//modifyWord
 }//DictionaryService
