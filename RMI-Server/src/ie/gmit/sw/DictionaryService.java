@@ -16,4 +16,5 @@ public interface DictionaryService extends Remote {
 	public String lookup(String s) throws RemoteException;
 	public void loadDictionary() throws RemoteException;
 	public void addWord(String word, String definition) throws RemoteException;
+	public void deleteWord(String word, String definition) throws RemoteException;
 }//DictionaryService
