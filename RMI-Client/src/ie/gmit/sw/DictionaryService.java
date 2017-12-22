@@ -15,4 +15,5 @@ import java.rmi.RemoteException;
 public interface DictionaryService extends Remote {
 	public String lookup(String s) throws RemoteException;
 	public void loadDictionary() throws RemoteException;
+	public void addWord(String word, String definition) throws RemoteException;
 }//DictionaryService

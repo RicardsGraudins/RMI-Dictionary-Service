@@ -4,5 +4,6 @@
   <welcome-file-list>
     <welcome-file>Index.jsp</welcome-file>
     <welcome-file>Response.jsp</welcome-file>
+    <welcome-file>AddWord.jsp</welcome-file>
   </welcome-file-list>
 </web-app>

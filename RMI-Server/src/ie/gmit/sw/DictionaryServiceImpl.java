@@ -1,7 +1,9 @@
 package ie.gmit.sw;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -72,4 +74,19 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 			e.printStackTrace();
 		}//Catch
 	}//loadDictionary
+	
+	//Append a new word to the DICTIONARY_FILE 
+	public void addWord(String word, String definition) throws RemoteException{
+		File file = new File(DICTIONARY_FILE);
+		
+		try {
+			FileWriter writer = new FileWriter(file, true);
+			writer.write("\n" + word + ", " + definition);
+			writer.flush();
+			writer.close();
+		}//Try
+		catch(IOException e) {
+			e.printStackTrace();
+		}//Catch
+	}//addWord
 }//DictionaryService
