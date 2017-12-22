@@ -16,7 +16,7 @@ The lecturer is Patrick Mannion.
 RMI stands for Remote Method Invocation. It is a mechanism that allows an object residing in one system (JVM) to access/invoke an object running on another JVM. RMI is used to build distributed applications; it provides remote communication between Java programs. It is provided in the package java.rmi.
 
 <p align="center">
-  <img width="698" height="397" src="https://github.com/RicardsGraudins/RMI-Dictionary-Service/blob/master/Resources/RMI.png">
+  <img width="528" height="433" src="https://github.com/RicardsGraudins/RMI-Dictionary-Service/blob/master/Resources/RMI.png">
 </p>
 
 ## What is Tomcat:
@@ -30,6 +30,18 @@ Java Server Pages (JSP) is a server-side programming technology used to create w
 A JSP page consists of HTML tags and JSP tags. The jsp pages are easier to maintain than servlet because we can separate designing and development. It provides some additional features such as Expression Language, Custom Tag etc.
 
 ## How to run:
+There are a few ways to run this project; to run both the server and client simultaneously in Eclipse follow these steps:  
+**N.B.** Have a version of Eclipse installed & Java JRE.  
+Download and unzip the project.
+
+**To run the server:**  
+Open Eclipse, in package explorer right click -> import -> general -> existing projects into workspace -> next -> browse -> select RMI-Server -> finish. Now you can simply run the server as a java application.
+
+**To run the client:**  
+Open a different instance of Eclipse with a different workspace from the server(to run them simultaneously).  
+Before importing go to the resources folder and unzip apache-tomcat-9.0.2.zip.  
+
+In package explorer right click -> import -> general -> existing projects into workspace -> next -> browse -> select RMI-Client -> finish. Now to run the Client, in the package explorer right click on RMI-Client and click run as -> run on server -> in the window that pops up click the drop down for Apache -> Tomcat v9.0 Server -> next -> tomcat installation directory browse -> select the tomcat folder that you just unzipped and the Client will run without any issues.
 
 ## References:
 * [Remote Method Invocation](https://www.tutorialspoint.com/java_rmi/index.htm)
