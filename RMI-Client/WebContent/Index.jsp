@@ -18,6 +18,8 @@
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script type="text/javascript">
+		//When the user clicks on the submit button hide the form
+		//and display text "Waiting for response..."
 		$(document).ready(function() {
 			$('#submitbtn').on('click', function(){
 				$("#myform").hide();

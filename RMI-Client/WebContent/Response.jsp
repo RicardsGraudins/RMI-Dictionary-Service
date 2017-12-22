@@ -8,12 +8,14 @@
 </head>
 <body>
 	<h1>Dictionary Service</h1>
+	<!-- Output the word & definition -->
 	<%
 		String word = (String)request.getAttribute("word");
 		String definition = (String)request.getAttribute("definition");
 		out.print(word + ": " + definition);
 	%>
 	<br/>
+	<!-- Link to make another query -->
 	<form action="http://localhost:8080/RMI-Client">
     	<input type="submit" value="Make another query" />
 	</form>
